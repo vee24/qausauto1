@@ -1,1 +1,1 @@
-Template files for QA test sites.
+QA test site for Playwright automated tests against US environment.
