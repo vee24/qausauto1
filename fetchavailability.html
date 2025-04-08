@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+      charset="UTF-8"
+    />
+    <title>Test API Page</title>
+    <script>
+      async function test() {
+        const DEFAULT_HEADERS = {
+          "X-Requested-With": "XMLHttpRequest",
+        };
+        const additionalHeaders = {};
+
+        //const url = 'https://api.vee24.com/api/Availability/?token=' + this.settings.token + '&callback=apiResponse';
+        const url =
+          "https://api-qa.vee24.com/api/Availability/?token=6e5b7f45-a6d3-4ab1-b81a-a07115e5f58f&callback=apiResponse";
+
+        const requestHeaders = Object.assign(
+          {},
+          DEFAULT_HEADERS,
+          additionalHeaders
+        );
+        const result = await window.fetch(url, {
+          method: "GET",
+          mode: "cors",
+          credentials: "same-origin",
+          headers: Object.assign({}, requestHeaders, {
+            Accept: "text/html, text/plain, */*",
+          }),
+        });
+      }
+
+      test();
+    </script>
+  </head>
+  <body>
+    <h1>FETCH TEST</h1>
+  </body>
+</html>
